@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  hh-updater:
+    build: .
+    container_name: hh-updater
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./cookies.json:/app/cookies.json
